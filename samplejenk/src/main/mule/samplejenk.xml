@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="92cf1677-2e92-44d1-80cb-b9afdd35a83e" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<flow name="samplejenkFlow" doc:id="943686ec-a604-4736-b12a-33d320143ce3" >
+		<http:listener doc:name="Listener" doc:id="07fecdd0-ee1b-4cce-98f8-7cbd51dae909" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value="Testing Jenkins For Deployment" doc:name="Set Payload" doc:id="d8127680-b41c-47c3-848b-c950388c2c3d" />
+	</flow>
+</mule>
